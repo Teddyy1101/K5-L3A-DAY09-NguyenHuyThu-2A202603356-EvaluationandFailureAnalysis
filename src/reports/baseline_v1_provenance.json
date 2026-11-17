@@ -1,0 +1,24 @@
+{
+    "kind":  "baseline_v1_provenance",
+    "agent_source_ref":  "origin/main",
+    "agent_source_commit":  "d44a5ce441ecb9a554df30df00bcbef3717fb757",
+    "agent_package_tree":  "1a7a3e1dbc5b32a6bada861a9a5cdd9f6ce2c7cb",
+    "eval_harness_source":  "starter/d09 M1-M4 snapshot; source hashes below",
+    "main_harness_approved":  false,
+    "source_hash_format":  "SHA256 of UTF-8 without BOM, LF line endings",
+    "generation_command":  "python -m lab9.eval --shape swarm --spec config/metric_spec.yaml --out reports/baseline_v1.json",
+    "baseline_sha256":  "f03d0214b4c29c93161f46a000a40f2f68bf25252ced97e8bfbe28c4cf899bf5",
+    "independent_pr_report_sha256":  "f03d0214b4c29c93161f46a000a40f2f68bf25252ced97e8bfbe28c4cf899bf5",
+    "source_sha256":  {
+                          "src/lab9/gate.py":  "0938ac0e85e21c75bf7f0a9b22d5f85122ee42f24a63d09588f3f6f32496127e",
+                          "src/lab9/ci_check.py":  "4c15f4024eb42e0dbd3cda2a44d8257fbb7cc2d946a6114bc76cd805b88cf1e8",
+                          "src/lab9/evalset.py":  "ce0bec1f9f3136273721cf58e0b336118cdc463c0da4800686cd566c4683c51e",
+                          "src/lab9/eval.py":  "cfd67834996157fa960af6f7a02435f42ca7432817cdd1167d8db9509069c2f6",
+                          "src/data/eval/eval_set_v1.jsonl":  "0867206688e32171765f02beda1d036edcb8f2234d5238f09d74f03860dcd5a0",
+                          "src/config/metric_spec.yaml":  "ad748dee98c9fcae3d8bacae960e150e09122e5960ef24dddcafc8f405740cb7",
+                          "src/lab9/judge.py":  "554e3aaed7b78f3dc035d9769fcaf1aeeb58532bd9b4e352138dfb2bcc6f4ad6",
+                          "src/lab9/graders.py":  "32db088afce9e1d9f77dbf0c08a1e6237e4becab1be8ac7cf8706895baf11975",
+                          "src/lab9/stats.py":  "89ca952897c31166869b53f7ae3bed1d1d65527f3a71024950bd7f4d0e1843f8",
+                          "src/data/eval/labels_v1.json":  "5c39cb2948732cbbc60384edca86e2fd90fbda587f672b31a6fc0b21040608aa"
+                      }
+}

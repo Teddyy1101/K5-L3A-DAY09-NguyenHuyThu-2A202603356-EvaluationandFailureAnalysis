@@ -1,4 +1,34 @@
-# Lab 8 — From Workflows to Agents (LogiX-VN: một task, bốn kiến trúc)
+# Lab 9 — Evaluation and Failure Analysis
+
+**Nguyễn Huy Thứ — 2A202603356 — K5/L3A.** [Repository Public](https://github.com/Teddyy1101/K5-L3A-DAY09-NguyenHuyThu-2A202603356-EvaluationandFailureAnalysis). Lab 9 được triển khai trên nền repo Lab 8 nhóm potato; giữ nguyên package `src/lab8/` và lịch sử đóng góp của nhóm.
+
+## Hồ sơ Lab 9
+
+- [PRD v1.1](docs/PRD_v1.1.md), [eval card](docs/eval_card.md), [failure taxonomy](docs/failure_taxonomy.md), [trace case](docs/trace_case.md), [judge audit](docs/judge_audit.md).
+- [Kết quả M4](docs/bootstrap_gate.md), [M5–M7](docs/advanced_eval.md), [output chạy để đối chiếu](docs/run_evidence.md).
+- [Danh mục report](src/reports/README.md), [harness map](src/harness_map.yaml), [spec v1](src/config/metric_spec.yaml), [spec v2](src/config/metric_spec_v2.yaml).
+- Nguồn bài: [starter và hướng dẫn nộp Lab 9](https://github.com/VinUni-AI20k/K5-Day9-Evaluation-and-Failure-Analysis/blob/main/SUBMISSION.md). Các file CHECKPOINTS/RUBRIC/SUBMISSION gốc bên dưới vẫn thuộc Lab 8 kế thừa.
+
+M0–M7 đã kiểm local: eval v1 gồm 14 item × 5 seed, v2 gồm 28 item × 5 seed; mutation 3/3, false alarms 0 và bốn trap bị chặn. Bộ test public đầy đủ có 475 test; kết quả GitHub Actions cần xem run thực tế của repo. Không có kết quả hidden grader hoặc phê duyệt pilot thật trong hồ sơ này.
+
+## Chạy kiểm tra Lab 9
+
+Python 3.11–3.13; các lệnh sau chạy từ `src/` trong một môi trường Python đã chuẩn bị:
+
+```text
+python -m pip install -r requirements.txt -r requirements-lab9.txt
+python -m lab9.smoke
+python -m lab9.evalset --check
+python -m lab9.evalset --v2 --check
+python -m pytest -q -o addopts=
+python -m lab9.mutation --spec config/metric_spec_v2.yaml --baseline reports/baseline_v2.json
+```
+
+Workflow `lab9-eval-gate` chạy trên PR hoặc bằng **Actions → Run workflow**. Repo chứa baseline v1/v2 để CI đối chiếu; không sửa tay JSON và không đưa `.env`, venv, trace hoặc SQLite runtime vào Git.
+
+---
+
+## Tài liệu Lab 8 kế thừa — From Workflows to Agents
 
 AI20K K5, ngày 8. Nhóm xử lý claim hoàn phí vận chuyển của công ty giả lập LogiX-VN bằng **bốn kiến trúc** (workflow, single agent, orchestrator, swarm), rồi dựa trên số đo để chọn kiến trúc **ít tự chủ nhất mà vẫn làm được việc**. Dữ liệu là dữ liệu giả. Không cần GPU, API key hay internet trong giờ lab; chạy được trên Windows, macOS và Linux.
 
